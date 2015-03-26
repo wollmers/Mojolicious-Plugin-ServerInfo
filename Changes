@@ -1,6 +1,7 @@
 Revision history for Mojolicious::Plugin::ServerInfo.
 
 {{$NEXT}}
+       - update badges
 
 0.004  2015-03-26 17:03:52 CET
        - move pod before DATA (workaround)
