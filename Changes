@@ -1,6 +1,8 @@
 Revision history for Mojolicious::Plugin::ServerInfo.
 
 {{$NEXT}}
+
+0.004  2015-03-26 17:03:52 CET
        - move pod before DATA (workaround)
 
 0.003  2015-03-26 16:50:51 CET
