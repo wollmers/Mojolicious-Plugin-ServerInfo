@@ -59,7 +59,7 @@
          "web" : "https://github.com/wollmers/Mojolicious-Plugin-ServerInfo"
       }
    },
-   "version" : "0.001",
+   "version" : "0.002",
    "x_contributors" : [
       "Helmut Wollmersdorfer <helmut@wollmersdorfer.at>",
       "Helmut Wollmersdorfer <helmut.wollmersdorfer@fixpunkt.de>"
