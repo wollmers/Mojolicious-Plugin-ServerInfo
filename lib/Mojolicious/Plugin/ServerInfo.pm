@@ -18,8 +18,8 @@ sub register {
 Mojolicious::Plugin::ServerInfo - display Server and Perl environment data
 
 =for html
-<a href="https://travis-ci.org/wollmers/Mojolicious-Plugin-ServerInfo"><img src="https://travis-ci.org/wollmers/Mojolicious-Plugin-ServerInfo.png" alt="Mojolicious-Plugin-ServerInfo"></a>
-<a href='https://coveralls.io/r/wollmers/Mojolicious-Plugin-ServerInfo?branch=master'><img src='https://coveralls.io/repos/wollmers/Mojolicious-Plugin-ServerInfo/badge.png?branch=master' alt='Coverage Status' /></a>
+<a href="https://travis-ci.org/wollmers/Mojolicious-Plugin-ServerInfo"><img src="https://travis-ci.org/wollmers/Mojolicious-Plugin-ServerInfo.svg?branch=master" alt="Mojolicious-Plugin-ServerInfo"></a>
+<a href='https://coveralls.io/r/wollmers/Mojolicious-Plugin-ServerInfo'><img src='https://coveralls.io/repos/wollmers/Mojolicious-Plugin-ServerInfo/badge.svg' alt='Coverage Status' /></a>
 
 =head1 SYNOPSIS
 
