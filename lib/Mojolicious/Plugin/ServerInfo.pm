@@ -1,27 +1,159 @@
 package Mojolicious::Plugin::ServerInfo;
 use Mojo::Base 'Mojolicious::Plugin';
 
-use Mojo::Loader qw(data_section find_modules load_class);
-
 our $VERSION = '0.001';
 
 sub register {
-  my ($self, $app, $conf) = @_;
+  my ($self, $app) = @_;
 
-  $conf ||= {};
-
-  $app->helper(
-    server_info => sub {
-      my ($self, $app) = @_;
-
-      # Append class
-      push @{$app->renderer->classes}, __PACKAGE__;
-      push @{$app->static->classes},   __PACKAGE__;
-    }
-  );
+  push @{$app->renderer->classes}, __PACKAGE__;
+  push @{$app->static->classes},   __PACKAGE__;
+  $app->routes->any('/serverinfo' => sub { shift->render } );
 }
 
 1;
+
+__DATA__
+
+@@ serverinfo.css
+
+body {
+    background-color: #fff;
+    color: #333;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 0.9em;
+    line-height: 1.5em;
+    margin: 0;
+}
+html {
+    font-size: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 1;
+    margin: 10px 0;
+    text-rendering: optimizelegibility;
+}
+h1 {
+  font-size: 1.5em;
+  line-height: 1.7em;
+}
+h2 {
+  font-size: 1.3em;
+  line-height: 1.7em;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table.striped {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  padding: 1em;
+}
+th, td {
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    padding: 4px 5px;
+}
+th {
+    font-weight: bold;
+}
+
+.striped tr:nth-child(odd) th, 
+.striped tr:nth-child(odd) td { 
+  background-color: #f9f9f9 
+}
+.striped tr:nth-child(even) th,
+.striped tr:nth-child(even) td { 
+  background-color: #fff 
+}
+.striped { border-top: solid #ddd 1px }
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@@ serverinfo.html.ep
+<!DOCTYPE html>
+<html>
+<head>
+<title>Serverinfo</title>
+<link media="screen, print, projection" type="text/css" rel="stylesheet" href="/serverinfo.css">
+</head>
+<body>
+<div class="container">
+
+<h1>Serverinfo</h1> 
+
+<h2>%ENV</h2>
+
+%= tag table => class => "striped" => begin
+  %= tag tr => begin
+    % for my $header (qw(key value)) {
+      %= tag th =>  $header 
+    % } 
+  %= end
+  % for my $key (sort keys %ENV) {
+      %= tag tr => begin
+        %= tag td =>  $key
+        %= tag td =>  $ENV{$key} // ''
+      %= end
+  % }
+%= end
+
+
+<h2>Perl @INC</h2>
+
+%= tag table => class => "striped" => begin
+  %= tag tr => begin
+    % for my $header (qw(path)) {
+      %= tag th =>  $header 
+    % } 
+  %= end
+  % for my $path (@INC) {
+      %= tag tr => begin
+        %= tag td =>  $path // ''
+      %= end
+  % }
+%= end
+
+<h2>Perl %INC</h2>
+
+%= tag table => class => "striped" => begin
+  %= tag tr => begin
+    % for my $header (qw(file version path)) {
+      %= tag th =>  $header 
+    % } 
+  %= end
+  % for my $key (sort keys %INC) {
+      % my $module = $key;
+      % $module =~ s{\/}{::}gsmx;
+      % $module =~ s/.pm$//g;
+      % my $version; 
+      % { no strict 'refs';
+        % $version = ${$module . "::VERSION"} || '';
+      % }
+      %= tag tr => begin
+        %= tag td =>  $key
+        %= tag td =>  $version
+        %= tag td =>  $INC{$key} // ''
+      %= end
+  % }
+%= end
+
+<p>Number of modules: <%= scalar keys %INC %></p>
+
+</div>
+</body>
+</html>
 
 __END__
 
@@ -70,11 +202,3 @@ it under the same terms as Perl itself.
 
 =cut
 
-
-__DATA__
-
-@@ alertassets.js
-alert("Hello World!");
-
-@@ alertassets.html.ep
-%= javascript "/alertassets.js"
