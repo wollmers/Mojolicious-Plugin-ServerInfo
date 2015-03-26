@@ -174,6 +174,12 @@ Mojolicious::Plugin::ServerInfo - display Server and Perl environment data
 
 L<Mojolicious::Plugin::ServerInfo> is a Mojolicious-Plugin.
 
+It creates a route
+
+  /serverinfo
+  
+where detailed info is dispalyed in formatted HTML.
+
 
 =head1 SEE ALSO
 

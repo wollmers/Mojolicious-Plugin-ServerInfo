@@ -1,6 +1,7 @@
 Revision history for Mojolicious::Plugin::ServerInfo.
 
 {{$NEXT}}
+       - improve docs
 
 0.001  2015-03-26 16:01:34 CET
        - initial version
