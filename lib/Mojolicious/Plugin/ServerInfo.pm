@@ -155,7 +155,7 @@ th {
 </body>
 </html>
 
-__END__
+@@ serverinfo.pod
 
 =head1 NAME
 
