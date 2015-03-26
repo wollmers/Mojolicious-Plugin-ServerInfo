@@ -1,6 +1,7 @@
 Revision history for Mojolicious::Plugin::ServerInfo.
 
 {{$NEXT}}
+       - try workaround for readme
 
 0.002  2015-03-26 16:37:32 CET
        - improve docs
