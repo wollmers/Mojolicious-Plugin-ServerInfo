@@ -1,7 +1,7 @@
 package Mojolicious::Plugin::ServerInfo;
 use Mojo::Base 'Mojolicious::Plugin';
 
-our $VERSION = '0.006';
+our $VERSION = '0.007';
 
 sub register {
   my ($self, $app) = @_;
