@@ -58,6 +58,10 @@ L<http://github.com/wollmers/Mojolicious-Plugin-ServerInfo>
 
 Helmut Wollmersdorfer, E<lt>helmut.wollmersdorfer@gmail.comE<gt>
 
+=for html
+<a href='http://cpants.cpanauthors.org/author/wollmers'><img src='http://cpants.cpanauthors.org/author/wollmers.png' alt='Kwalitee Score' /></a>
+
+
 =head1 COPYRIGHT AND LICENSE
 
 Copyright (C) 2013-2015 by Helmut Wollmersdorfer
