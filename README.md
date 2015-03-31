@@ -36,6 +36,11 @@ where detailed info is dispalyed in formatted HTML.
 
 Helmut Wollmersdorfer, <helmut.wollmersdorfer@gmail.com>
 
+<div>
+
+    <a href='http://cpants.cpanauthors.org/author/wollmers'><img src='http://cpants.cpanauthors.org/author/wollmers.png' alt='Kwalitee Score' /></a>
+</div>
+
 # COPYRIGHT AND LICENSE
 
 Copyright (C) 2013-2015 by Helmut Wollmersdorfer
