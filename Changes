@@ -1,6 +1,7 @@
 Revision history for Mojolicious::Plugin::ServerInfo.
 
 {{$NEXT}}
+       - add version badge
 
 0.007  2015-03-31 04:08:33 CEST
        - add version badge
