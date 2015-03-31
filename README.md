@@ -6,6 +6,7 @@ Mojolicious::Plugin::ServerInfo - display Server and Perl environment data
 
     <a href="https://travis-ci.org/wollmers/Mojolicious-Plugin-ServerInfo"><img src="https://travis-ci.org/wollmers/Mojolicious-Plugin-ServerInfo.svg?branch=master" alt="Mojolicious-Plugin-ServerInfo"></a>
     <a href='https://coveralls.io/r/wollmers/Mojolicious-Plugin-ServerInfo'><img src='https://coveralls.io/repos/wollmers/Mojolicious-Plugin-ServerInfo/badge.svg' alt='Coverage Status' /></a>
+    <a href='http://cpants.cpanauthors.org/dist/Mojolicious-Plugin-ServerInfo'><img src='http://cpants.cpanauthors.org/dist/Mojolicious-Plugin-ServerInfo.png' alt='Kwalitee Score' /></a>
 </div>
 
 # SYNOPSIS
@@ -19,7 +20,6 @@ Mojolicious::Plugin::ServerInfo - display Server and Perl environment data
 It creates a route
 
     /serverinfo
-    
 
 where detailed info is dispalyed in formatted HTML.
 

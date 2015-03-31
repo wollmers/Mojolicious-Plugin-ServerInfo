@@ -20,6 +20,8 @@ Mojolicious::Plugin::ServerInfo - display Server and Perl environment data
 =for html
 <a href="https://travis-ci.org/wollmers/Mojolicious-Plugin-ServerInfo"><img src="https://travis-ci.org/wollmers/Mojolicious-Plugin-ServerInfo.svg?branch=master" alt="Mojolicious-Plugin-ServerInfo"></a>
 <a href='https://coveralls.io/r/wollmers/Mojolicious-Plugin-ServerInfo'><img src='https://coveralls.io/repos/wollmers/Mojolicious-Plugin-ServerInfo/badge.svg' alt='Coverage Status' /></a>
+<a href='http://cpants.cpanauthors.org/dist/Mojolicious-Plugin-ServerInfo'><img src='http://cpants.cpanauthors.org/dist/Mojolicious-Plugin-ServerInfo.png' alt='Kwalitee Score' /></a>
+
 
 =head1 SYNOPSIS
 
@@ -33,7 +35,7 @@ L<Mojolicious::Plugin::ServerInfo> is a Mojolicious-Plugin.
 It creates a route
 
   /serverinfo
-  
+
 where detailed info is dispalyed in formatted HTML.
 
 
@@ -118,13 +120,13 @@ th {
     font-weight: bold;
 }
 
-.striped tr:nth-child(odd) th, 
-.striped tr:nth-child(odd) td { 
-  background-color: #f9f9f9 
+.striped tr:nth-child(odd) th,
+.striped tr:nth-child(odd) td {
+  background-color: #f9f9f9
 }
 .striped tr:nth-child(even) th,
-.striped tr:nth-child(even) td { 
-  background-color: #fff 
+.striped tr:nth-child(even) td {
+  background-color: #fff
 }
 .striped { border-top: solid #ddd 1px }
 
@@ -143,15 +145,15 @@ th {
 <body>
 <div class="container">
 
-<h1>Serverinfo</h1> 
+<h1>Serverinfo</h1>
 
 <h2>%ENV</h2>
 
 %= tag table => class => "striped" => begin
   %= tag tr => begin
     % for my $header (qw(key value)) {
-      %= tag th =>  $header 
-    % } 
+      %= tag th =>  $header
+    % }
   %= end
   % for my $key (sort keys %ENV) {
       %= tag tr => begin
@@ -167,8 +169,8 @@ th {
 %= tag table => class => "striped" => begin
   %= tag tr => begin
     % for my $header (qw(path)) {
-      %= tag th =>  $header 
-    % } 
+      %= tag th =>  $header
+    % }
   %= end
   % for my $path (@INC) {
       %= tag tr => begin
@@ -182,14 +184,14 @@ th {
 %= tag table => class => "striped" => begin
   %= tag tr => begin
     % for my $header (qw(file version path)) {
-      %= tag th =>  $header 
-    % } 
+      %= tag th =>  $header
+    % }
   %= end
   % for my $key (sort keys %INC) {
       % my $module = $key;
       % $module =~ s{\/}{::}gsmx;
       % $module =~ s/.pm$//g;
-      % my $version; 
+      % my $version;
       % { no strict 'refs';
         % $version = ${$module . "::VERSION"} || '';
       % }
