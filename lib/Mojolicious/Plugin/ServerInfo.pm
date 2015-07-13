@@ -39,8 +39,18 @@ It creates a route
 
   /serverinfo
 
-where detailed info is dispalyed in formatted HTML.
+where detailed info is displayed in formatted HTML.
 
+=head2 METHODS
+
+=over 4
+
+
+=item register
+
+Do not use directly. It is called by Mojolicious.
+
+=back
 
 =head1 SEE ALSO
 

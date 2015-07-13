@@ -17,8 +17,7 @@ else {
   add_stopwords(qw(
      Helmut
      Wollmersdorfer
-     Subsequence
-     Subsequences
+     Mojolicious
   ));
   all_pod_files_spelling_ok();
 }
